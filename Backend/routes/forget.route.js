@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const nodemailer = require('nodemailer');
 const { UserModel } = require("../models/User.model");
 const bcrypt = require("bcrypt")
-
+require('dotenv').config()
 const forgetRoute = express.Router();
 
 
@@ -38,7 +38,7 @@ const sendEmail = (email,otp)=>{
         requireTLS: true,
         auth: {
             user: 'utkarshsinha854@gmail.com',
-            pass: 'nlpjgxfregczpmov'
+            pass: process.env.gkey
         }
     });
     
